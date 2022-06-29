@@ -1,4 +1,4 @@
-/* Queue Operations /*
+// Queue Operations //
 
 
 
@@ -11,12 +11,15 @@ struct queue
     int rear;
     int *Q;
 };
+
 void create(struct queue *q,int size)
 {
+    
     q->size=size;
     q->front=q->rear=-1;
     q->Q=(int *)malloc(q->size*sizeof(int));
 }
+
 void enqueue(struct queue *q,int x)
 
 {
@@ -31,7 +34,9 @@ void enqueue(struct queue *q,int x)
         q->Q[q->rear]=x;
     }
 }
+
 void dequeue(struct queue *q)
+    
 {
     if(q->front==q->rear)
     {
@@ -41,6 +46,7 @@ void dequeue(struct queue *q)
         q->front++;
     }
 }
+
 void display(struct queue q)
 {
     for(int i=q.front+1;i<=q.rear;i++)
@@ -48,6 +54,7 @@ void display(struct queue q)
         printf("%d ",q.Q[i]);
     }
 }
+
 int main()
 {
     struct queue q;
